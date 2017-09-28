@@ -1,0 +1,15 @@
+{
+	"name": "regex-dns",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"author": "Andrey Kurnoskin",
+	"license": "MIT",
+	"dependencies": {
+		"@types/node": "^8.0.31",
+		"typescript": "^2.5.3"
+	},
+	"devDependencies": {
+		"tslint-config-airbnb": "^5.3.0"
+	}
+}

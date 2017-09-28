@@ -1,0 +1,9 @@
+{
+	"forwarders": [
+		"8.8.8.8"
+	],
+	"maps": [
+		{ "regexp": "loc-.*\\.mirkvartir\\.ru", "ip": "172.16.102.10" }
+	],
+	"port": 53
+}

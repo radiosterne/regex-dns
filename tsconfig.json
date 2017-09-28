@@ -1,0 +1,14 @@
+﻿{
+	"compilerOptions": {
+		"target": "es5",
+		"strictNullChecks": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"lib": [ "es6" ],
+		"alwaysStrict": true,
+		"allowSyntheticDefaultImports": true,
+		"types": [
+			"node"
+		]
+	}
+}

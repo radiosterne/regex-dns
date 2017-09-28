@@ -41,7 +41,7 @@ export class Header {
 			this.id,
 			true,
 			this.opCode,
-			false,
+			true,
 			false,
 			this.recursionDesired,
 			false,

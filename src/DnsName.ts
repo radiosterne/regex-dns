@@ -1,5 +1,7 @@
 export class DnsName {
-	private constructor(public readonly name: string) {
+	private constructor(
+		public readonly name: string,
+		public readonly serializedLength: number) {
 	}
 
 	static deserialize(buffer: Buffer, position: number) {
@@ -19,7 +21,7 @@ export class DnsName {
 			}
 		}
 
-		return new DnsName(result);
+		return new DnsName(result, currentPosition - position);
 	}
 
 	serialize() {

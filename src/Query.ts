@@ -1,6 +1,6 @@
 import { Answer } from "./Answer";
 import { Header } from "./Header";
-import { Question, QuestionClass } from "./Question";
+import { Question, QuestionType } from "./Question";
 
 export class Query {
 	private constructor(
@@ -21,7 +21,7 @@ export class Query {
 		const header = Header.deserialize(msg);
 		if (!header.isResponse && header.questionCount === 1) {
 			const question = Question.deserialize(msg, Header.serializedSize);
-			if (question.questionClass === QuestionClass.A) {
+			if (question.questionType === QuestionType.A) {
 				return new Query(header, question);
 			}
 		}

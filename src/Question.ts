@@ -1,12 +1,11 @@
 import { DnsName } from "./DnsName";
 
 export enum QuestionType {
-
+	Unused,
+	A
 }
 
 export enum QuestionClass {
-	Unused,
-	A
 }
 
 export class Question {
@@ -18,8 +17,9 @@ export class Question {
 
 	static deserialize(buffer: Buffer, position: number) {
 		const dnsName = DnsName.deserialize(buffer, position);
-		const questionType = buffer.readUInt16BE(position + dnsName.name.length);
-		const questionClass = buffer.readUInt16BE(position + dnsName.name.length + 2);
+		const currentPosition = position + dnsName.serializedLength + 1;
+		const questionType = buffer.readUInt16BE(currentPosition);
+		const questionClass = buffer.readUInt16BE(currentPosition + 2);
 
 		return new Question(dnsName, questionType, questionClass);
 	}
